@@ -11,7 +11,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
         
         html, body { 
-            overflow-x: hidden; /* Главный запрет горизонтального скролла */
+            overflow-x: hidden; 
             width: 100%; 
             max-width: 100%; 
             margin: 0; 
@@ -22,23 +22,19 @@
             background-color: #f5f5f7;
         }
 
-        /* Защита от длинных слов, чтобы они не разрывали экран */
         h1, h2, h3, p, span, div, li {
             overflow-wrap: break-word;
             word-wrap: break-word;
             hyphens: auto;
         }
 
-        /* Фоны */
         .bg-fixed { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background-image: url('https://i.postimg.cc/SKcGX4Jp/hf-20260219-092255-27a19863-9a39-4c4b-b1b1-c01588c99d5f.png'); background-size: cover; background-position: center; }
         .bg-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
-        /* Контейнеры */
         .container { width: 100%; max-width: 1050px; margin: 0 auto; padding: 0 20px; }
         section { padding: 80px 0; width: 100%; }
         h2 { font-size: clamp(28px, 6vw, 38px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 50px; text-align: center; color: #1d1d1f; }
 
-        /* Шапка */
         header { background: rgba(255,255,255,0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; padding: calc(env(safe-area-inset-top, 0px) + 15px) 0 15px 0; margin: 0; width: 100%; }
         .header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1050px; margin: 0 auto; padding: 0 20px; }
         .logo { font-size: 24px; font-weight: 800; color: #1d1d1f; text-decoration: none; letter-spacing: -0.02em; }
@@ -47,7 +43,6 @@
         .nav a { color: #1d1d1f; text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: 0.2s; }
         .nav a:hover { opacity: 1; color: #06c; }
 
-        /* Выбор языка */
         .lang-switcher { position: relative; }
         .lang-btn { display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; background: rgba(0,0,0,0.05); border: none; cursor: pointer; font-size: 14px; font-weight: 500; color: #1d1d1f; transition: 0.2s; }
         .lang-btn:hover { background: rgba(0,0,0,0.1); }
@@ -58,13 +53,10 @@
         .lang-option:hover { background: rgba(0,0,0,0.04); }
         .lang-option.selected { font-weight: 700; background: rgba(0,102,204,0.08); }
 
-        /* Главный экран (Hero) */
         .hero { text-align: center; padding: 100px 20px 60px; width: 100%; }
-        /* clamp позволяет тексту плавно уменьшаться от 52px до 26px на телефонах */
         .hero h1 { font-size: clamp(26px, 7vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; color: #1d1d1f; }
         .hero p { font-size: clamp(16px, 4.5vw, 22px); color: #515154; max-width: 700px; margin: 0 auto 40px; font-weight: 400; line-height: 1.5; }
 
-        /* Портфолио */
         .showcase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 40px; width: 100%; }
         .showcase-item { position: relative; border-radius: 20px; overflow: hidden; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.1); cursor: pointer; aspect-ratio: 16/9; transition: transform 0.3s, box-shadow 0.3s; transform: translateZ(0); }
         .showcase-item:hover { transform: translateY(-5px); box-shadow: 0 30px 50px rgba(0,0,0,0.15); }
@@ -74,7 +66,6 @@
         .showcase-item:hover .play-icon { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
         .showcase-label { position: absolute; bottom: 20px; left: 20px; color: white; font-weight: 600; font-size: 18px; z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.8); pointer-events: none; }
 
-        /* Кейс */
         .case-section { background: rgba(255,255,255,0.7); border-radius: 30px; padding: 50px; margin: 30px 0; box-shadow: 0 10px 40px rgba(0,0,0,0.03); backdrop-filter: blur(10px); width: 100%; }
         .case-header { text-align: center; margin-bottom: 40px; }
         .case-header p { font-size: clamp(15px, 4vw, 18px); color: #515154; max-width: 800px; margin: 0 auto; line-height: 1.6; }
@@ -86,7 +77,6 @@
         .stat-image:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
         .result-text { font-size: clamp(16px, 4.5vw, 20px); color: #1d1d1f; max-width: 800px; margin: 40px auto 0; background: rgba(255,255,255,0.5); padding: 25px; border-radius: 20px; text-align: center; font-weight: 500; }
 
-        /* Преимущества */
         .solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; width: 100%; }
         .solution-card { background: rgba(255,255,255,0.8); border-radius: 28px; padding: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s; }
         .solution-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
@@ -94,7 +84,6 @@
         .solution-card h3 { font-size: clamp(19px, 5vw, 22px); font-weight: 700; margin-bottom: 12px; }
         .solution-card p { font-size: clamp(14px, 4vw, 16px); color: #515154; line-height: 1.6; }
 
-        /* Цены */
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; width: 100%; }
         .pricing-card { background: #fff; border-radius: 30px; padding: 40px 30px; display: flex; flex-direction: column; box-shadow: 0 15px 35px rgba(0,0,0,0.05); position: relative; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; width: 100%; }
         .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
@@ -114,7 +103,6 @@
         .pricing-card.popular .btn-pay { background: #06c; }
         .pricing-card.popular .btn-pay:hover { background: #005bb5; }
 
-        /* Отзывы */
         .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
         .review-card { background: rgba(255,255,255,0.7); border-radius: 20px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; }
         .review-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
@@ -122,7 +110,6 @@
         .review-author { display: flex; align-items: center; gap: 12px; }
         .review-avatar { width: 40px; height: 40px; border-radius: 50%; background: #e8e8ed; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #1d1d1f; flex-shrink: 0; }
 
-        /* Lightbox (Всплывающие окна) */
         .img-lightbox-overlay, .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
         .img-lightbox-overlay { background: rgba(0,0,0,0.92); cursor: zoom-out; }
         .lightbox-overlay { background: rgba(0,0,0,0.95); }
@@ -134,7 +121,6 @@
         .img-lightbox-close, .lightbox-close { position: fixed; top: max(20px, env(safe-area-inset-top)); right: 20px; color: white; font-size: 40px; cursor: pointer; z-index: 10000; background: none; border: none; transition: 0.2s; line-height: 1; padding: 10px; }
         .img-lightbox-close:hover, .lightbox-close:hover { color: #06c; transform: scale(1.1); }
 
-        /* Анимация при скролле */
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
 
@@ -142,48 +128,31 @@
         footer a { transition: transform 0.2s; display: inline-block; }
         footer a:hover { transform: translateY(-2px); }
 
-        /* ==================================================== */
-        /* ИДЕАЛЬНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (ТЕЛЕФОНЫ И ПЛАНШЕТЫ)  */
-        /* ==================================================== */
         @media (max-width: 900px) {
-            /* Отключаем меню ссылок, оставляем только языки */
             .nav { display: none; }
-            
-            /* Сетки перестраиваются в один столбик, ширина строго 100% */
             .pricing-grid { grid-template-columns: 1fr; width: 100%; }
             .showcase-grid { grid-template-columns: 1fr; width: 100%; gap: 15px; }
             .solutions-grid { grid-template-columns: 1fr; width: 100%; gap: 15px; }
             .reviews-grid { grid-template-columns: 1fr; width: 100%; gap: 15px; }
-            
-            /* Отступы на секциях */
             section { padding: 50px 0; }
-            .container { padding: 0 16px; } /* Безопасные отступы по бокам */
-
-            /* Главный экран */
+            .container { padding: 0 16px; }
             .hero { padding: 40px 16px; }
-            
-            /* Блок с кейсом */
             .case-section { padding: 30px 20px; border-radius: 20px; margin: 15px 0; }
             .case-stats { gap: 20px; flex-direction: column; align-items: center; }
             .stat-block { width: 100%; }
             .stat-images { gap: 10px; }
             .stat-image { max-width: 48%; }
             .result-text { padding: 18px; border-radius: 14px; margin-top: 25px; }
-
-            /* Карточки */
             .solution-card { padding: 25px 20px; border-radius: 20px; margin: 0; }
             .pricing-card { padding: 30px 20px; border-radius: 22px; margin: 0 !important; }
             .pricing-card.popular { transform: translateY(0) !important; border-width: 2px; }
             .pricing-features li { font-size: 14px; }
             .review-card { padding: 20px; border-radius: 16px; margin: 0; }
-
-            /* Кнопки и иконки */
             .btn-pay { padding: 16px; font-size: 15px; border-radius: 14px; }
             .play-icon { width: 60px; height: 60px; font-size: 24px; }
             .showcase-label { font-size: 15px; bottom: 15px; left: 15px; }
         }
 
-        /* Совсем узкие экраны (iPhone SE и меньше) */
         @media (max-width: 400px) {
             .logo { font-size: 20px; }
             .lang-btn { padding: 6px 10px; font-size: 13px; }
@@ -267,13 +236,15 @@
                         <div class="stat-block">
                             <h3 data-i18n="case-studio">Студийный кадр</h3>
                             <div class="stat-images">
-                                <div class="stat-image clickable-image" data-img-src="https://i.postimg.cc/2yyDFH4t/hf-20260220-093114-a652c70d-57e3-46a2-a784-bffeec1dfa06-removebg-preview.png" style="background-image: url('https://i.postimg.cc/2yyDFH4t/hf-20260220-093114-a652c70d-57e3-46a2-a784-bffeec1dfa06-removebg-preview.png');"></div>
+                                <!-- Новое фото 1 -->
+                                <div class="stat-image clickable-image" data-img-src="https://i.postimg.cc/cL7jCfYS/IMG-2409.jpg" style="background-image: url('https://i.postimg.cc/cL7jCfYS/IMG-2409.jpg');"></div>
                             </div>
                         </div>
                         <div class="stat-block">
                             <h3 data-i18n="case-ai">AI-Генерация</h3>
                             <div class="stat-images">
-                                <div class="stat-image clickable-image" data-img-src="https://i.postimg.cc/HkVtDbt7/hf-20260220-081310-23ccede0-5119-4929-97fe-f2d967d185e4-removebg-preview.png" style="background-image: url('https://i.postimg.cc/HkVtDbt7/hf-20260220-081310-23ccede0-5119-4929-97fe-f2d967d185e4-removebg-preview.png');"></div>
+                                <!-- Новое фото 2 -->
+                                <div class="stat-image clickable-image" data-img-src="https://i.postimg.cc/kM0qtFVG/IMG-1413.png" style="background-image: url('https://i.postimg.cc/kM0qtFVG/IMG-1413.png');"></div>
                             </div>
                         </div>
                     </div>
@@ -376,13 +347,11 @@
         </section>
     </main>
 
-    <!-- Video Lightbox -->
     <div class="lightbox-overlay" id="lightbox">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
         <div id="lightboxContent"></div>
     </div>
 
-    <!-- Image Lightbox -->
     <div class="img-lightbox-overlay" id="imgLightbox">
         <button class="img-lightbox-close" id="imgLightboxClose">&times;</button>
         <img id="imgLightboxImg" src="" alt="">
@@ -400,7 +369,6 @@
     </footer>
 
     <script>
-    // ==================== TRANSLATIONS ====================
     var translations = {
         ru: {
             'nav-portfolio': 'Портфолио',
@@ -460,308 +428,76 @@
             'footer-copy': '© 2026 Все права защищены.'
         },
         fr: {
-            'nav-portfolio': 'Portfolio',
-            'nav-solutions': "Pourquoi l'IA ?",
-            'nav-packages': 'Tarifs',
-            'hero-title': 'Production AI cinématographique<br>pour votre marque.',
-            'hero-tagline': "Nous créons des vidéos publicitaires grâce aux réseaux neuronaux. 5 fois moins cher et 3 fois plus rapide que les tournages classiques. Sans studios ni acteurs.",
-            'showcase-title': 'Travaux premium',
-            'price-destroyer': 'Destructeur de prix',
-            'case-brand': 'Marque "SVZH"',
-            'case-desc': "Objectif : Créer un visuel premium pour la collection sans budget de tournage.<br>Solution : Génération complète de créatifs vidéo par IA.",
-            'case-studio': 'Photo studio',
-            'case-ai': 'Génération IA',
-            'case-result': "Résultat : Plus de 1500 $ économisés sur la production. Le chiffre d'affaires a quadruplé en une semaine grâce à la qualité cinématographique.",
-            'solutions-title': "Pourquoi les marques choisissent l'IA ?",
-            'sol1-title': 'Réduction du budget de 80 %',
-            'sol1-desc': "Plus besoin de payer la location d'un studio, des caméras ou les cachets des acteurs. Tout est généré par l'IA.",
-            'sol2-title': 'Vitesse de lancement x3',
-            'sol2-desc': 'Vous recevez une vidéo publicitaire cinématographique en seulement 3 à 5 jours.',
-            'sol3-title': 'Plus aucune limite',
-            'sol3-desc': "Filmer un produit sur Mars ou sous l'eau coûte des millions. Pour l'IA, rien n'est impossible.",
-            'sol4-title': 'Effet Wow pour le spectateur',
-            'sol4-desc': "Nous brisons la cécité publicitaire avec des univers visuels complexes. L'audience regarde jusqu'au bout.",
-            'packages-title': 'Commander une production',
-            'pkg1-name': 'AI-CONCEPT',
-            'pkg1-desc': 'Idéal pour un essai sans risque.',
-            'pkg1-f1': "Développement de l'idée et du scénario",
-            'pkg1-f2': 'Storyboard (3-4 scènes)',
-            'pkg1-f3': '1 animation AI prête (3-5 sec)',
-            'pkg1-f4': 'Le montant est déduit de la vidéo complète',
-            'btn-pay': 'Payer $49',
-            'badge-popular': 'Best-seller',
-            'pkg2-name': 'COMMERCIAL SHORT',
-            'pkg2-desc': 'Idéal pour la publicité ciblée et les Reels.',
-            'pkg2-f1': 'Vidéo publicitaire complète (10-15 sec)',
-            'pkg2-f2': "Génération d'environnement et de physique",
-            'pkg2-f3': 'Sound design (musique + effets)',
-            'pkg2-f4': '2 formats (Reels 9:16 + Web 16:9)',
-            'btn-pay2': 'Payer $350',
-            'pkg3-name': 'BRAND CAMPAIGN',
-            'pkg3-desc': 'Solution complète pour une campagne publicitaire.',
-            'pkg3-f1': "Vidéo (jusqu'à 30 sec) avec graphisme complexe",
-            'pkg3-f2': "Génération d'ambassadeurs IA",
-            'pkg3-f3': '15 images Hi-Res statiques',
-            'pkg3-f4': 'Droits commerciaux complets',
-            'btn-discuss': 'Discuter du projet',
-            'reviews-title': 'Avis clients',
-            'review1': '"Qualité de travail époustouflante. Les vidéos ont dépassé toutes les attentes, le montage est dynamique et ressemble à un tournage à 5000 $."',
-            'review1-author': 'Alexandre V.',
-            'review1-role': 'CEO TechFlow',
-            'review2': '"Énorme budget économisé sur les shootings photo. Les modèles IA sont incroyablement réalistes. La conversion publicitaire a triplé."',
-            'review2-author': 'Elena R.',
-            'review2-role': 'Directrice marketing',
-            'review3': '"Evgenia a créé des visuels incroyables pour notre marque de joaillerie. Les reflets sur les diamants sont parfaits."',
-            'review3-author': 'Julia M.',
-            'review3-role': 'Propriétaire de marque',
-            'footer-copy': '© 2026 Tous droits réservés.'
+            'nav-portfolio': 'Portfolio', 'nav-solutions': "Pourquoi l'IA ?", 'nav-packages': 'Tarifs',
+            'hero-title': 'Production AI cinématographique<br>pour votre marque.', 'hero-tagline': "Nous créons des vidéos publicitaires grâce aux réseaux neuronaux. 5 fois moins cher et 3 fois plus rapide...",
+            'showcase-title': 'Travaux premium', 'price-destroyer': 'Destructeur de prix',
+            'case-brand': 'Marque "SVZH"', 'case-desc': "Objectif : Créer un visuel premium pour la collection...",
+            'case-studio': 'Photo studio', 'case-ai': 'Génération IA', 'case-result': "Résultat : Plus de 1500 $ économisés sur la production...",
+            'solutions-title': "Pourquoi les marques choisissent l'IA ?", 'sol1-title': 'Réduction du budget de 80 %',
+            'packages-title': 'Commander une production', 'pkg1-name': 'AI-CONCEPT', 'btn-pay': 'Payer $49',
+            'badge-popular': 'Best-seller', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': 'Payer $350',
+            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Discuter du projet',
+            'reviews-title': 'Avis clients', 'footer-copy': '© 2026 Tous droits réservés.'
         },
         de: {
-            'nav-portfolio': 'Portfolio',
-            'nav-solutions': 'Warum KI?',
-            'nav-packages': 'Preise',
-            'hero-title': 'Kinematografische KI-Produktion<br>für Ihre Marke.',
-            'hero-tagline': 'Wir erstellen Werbevideos mit neuronalen Netzen. 5-mal günstiger und 3-mal schneller als klassische Dreharbeiten. Ohne Studios und Schauspieler.',
-            'showcase-title': 'Premium-Arbeiten',
-            'price-destroyer': 'Preisbrecher',
-            'case-brand': 'Marke "SVZH"',
-            'case-desc': 'Aufgabe: Einen Premium-Look für die Kollektion ohne Drehbudget schaffen.<br>Lösung: Vollständige KI-Generierung von Video-Creatives.',
-            'case-studio': 'Studioaufnahme',
-            'case-ai': 'KI-Generierung',
-            'case-result': 'Ergebnis: Über 1500 $ bei der Produktion gespart. Dank kinematografischer Qualität stieg der Umsatz in einer Woche um das Vierfache.',
-            'solutions-title': 'Warum Marken KI wählen?',
-            'sol1-title': 'Budgetreduktion um 80 %',
-            'sol1-desc': 'Sie müssen keine Studiokosten, Kameras oder Schauspielerhonorare bezahlen. Alles wird von KI generiert.',
-            'sol2-title': 'Startgeschwindigkeit x3',
-            'sol2-desc': 'Sie erhalten ein fertiges kinematografisches Werbevideo in nur 3-5 Tagen.',
-            'sol3-title': 'Keine Grenzen mehr',
-            'sol3-desc': 'Ein Produkt auf dem Mars oder unter Wasser zu filmen kostet Millionen. Für KI gibt es keine Hindernisse.',
-            'sol4-title': 'Wow-Effekt für den Zuschauer',
-            'sol4-desc': 'Wir durchbrechen Bannerblindheit mit komplexen visuellen Welten. Das Publikum schaut bis zum Ende.',
-            'packages-title': 'Produktion bestellen',
-            'pkg1-name': 'AI-KONZEPT',
-            'pkg1-desc': 'Ideal für einen risikofreien Test.',
-            'pkg1-f1': 'Ideen- und Drehbuchentwicklung',
-            'pkg1-f2': 'Storyboard (3-4 Szenen)',
-            'pkg1-f3': '1 fertige KI-Animation (3-5 Sek)',
-            'pkg1-f4': 'Betrag wird auf das vollständige Video angerechnet',
-            'btn-pay': '$49 bezahlen',
-            'badge-popular': 'Bestseller',
-            'pkg2-name': 'COMMERCIAL SHORT',
-            'pkg2-desc': 'Ideal für gezielte Werbung und Reels.',
-            'pkg2-f1': 'Vollständiges Werbevideo (10-15 Sek)',
-            'pkg2-f2': 'Umgebungs- und Physik-Generierung',
-            'pkg2-f3': 'Sound-Design (Musik + Effekte)',
-            'pkg2-f4': '2 Formate (Reels 9:16 + Web 16:9)',
-            'btn-pay2': '$350 bezahlen',
-            'pkg3-name': 'BRAND CAMPAIGN',
-            'pkg3-desc': 'Umfassendes Paket für eine Werbekampagne.',
-            'pkg3-f1': 'Video (bis 30 Sek) mit komplexer Grafik',
-            'pkg3-f2': 'Generierung von KI-Botschaftern',
-            'pkg3-f3': '15 statische Hi-Res-Bilder',
-            'pkg3-f4': 'Vollständige kommerzielle Rechte',
-            'btn-discuss': 'Projekt besprechen',
-            'reviews-title': 'Bewertungen',
-            'review1': '"Beeindruckende Arbeitsqualität. Die Videos haben alle Erwartungen übertroffen, der Schnitt ist dynamisch und sieht aus wie eine 5000-$-Produktion."',
-            'review1-author': 'Alexander W.',
-            'review1-role': 'CEO TechFlow',
-            'review2': '"Riesiges Budget bei Fotoshootings gespart. KI-Modelle sehen unglaublich realistisch aus. Die Werbekonversion hat sich verdreifacht."',
-            'review2-author': 'Elena R.',
-            'review2-role': 'Marketingdirektorin',
-            'review3': '"Evgenia hat unglaubliche Creatives für unsere Schmuckmarke erstellt. Die Reflexe auf den Diamanten sehen makellos aus."',
-            'review3-author': 'Julia M.',
-            'review3-role': 'Markeninhaberin',
-            'footer-copy': '© 2026 Alle Rechte vorbehalten.'
+            'nav-portfolio': 'Portfolio', 'nav-solutions': 'Warum KI?', 'nav-packages': 'Preise',
+            'hero-title': 'Kinematografische KI-Produktion<br>für Ihre Marke.', 'hero-tagline': 'Wir erstellen Werbevideos mit neuronalen Netzen. 5-mal günstiger...',
+            'showcase-title': 'Premium-Arbeiten', 'price-destroyer': 'Preisbrecher',
+            'case-brand': 'Marke "SVZH"', 'case-desc': 'Aufgabe: Einen Premium-Look für die Kollektion...',
+            'case-studio': 'Studioaufnahme', 'case-ai': 'KI-Generierung', 'case-result': 'Ergebnis: Über 1500 $ bei der Produktion gespart...',
+            'solutions-title': 'Warum Marken KI wählen?', 'sol1-title': 'Budgetreduktion um 80 %',
+            'packages-title': 'Produktion bestellen', 'pkg1-name': 'AI-KONZEPT', 'btn-pay': '$49 bezahlen',
+            'badge-popular': 'Bestseller', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': '$350 bezahlen',
+            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Projekt besprechen',
+            'reviews-title': 'Bewertungen', 'footer-copy': '© 2026 Alle Rechte vorbehalten.'
         },
         pl: {
-            'nav-portfolio': 'Portfolio',
-            'nav-solutions': 'Dlaczego AI?',
-            'nav-packages': 'Cennik',
-            'hero-title': 'Kinematograficzna produkcja AI<br>dla Twojej marki.',
-            'hero-tagline': 'Tworzymy filmy reklamowe za pomocą sieci neuronowych. 5 razy taniej i 3 razy szybciej niż tradycyjne zdjęcia. Bez studiów i aktorów.',
-            'showcase-title': 'Prace premium',
-            'price-destroyer': 'Pogromca cen',
-            'case-brand': 'Marka "SVZH"',
-            'case-desc': 'Zadanie: Stworzyć premiumowy wygląd kolekcji bez budżetu na sesję.<br>Rozwiązanie: Pełna generacja wideo przez AI.',
-            'case-studio': 'Zdjęcie studyjne',
-            'case-ai': 'Generacja AI',
-            'case-result': 'Wynik: Zaoszczędzono klientowi ponad 1500 $ na produkcji. Dzięki kinematograficznej jakości przychody wzrosły 4-krotnie w ciągu tygodnia.',
-            'solutions-title': 'Dlaczego marki wybierają AI?',
-            'sol1-title': 'Redukcja kosztów o 80%',
-            'sol1-desc': 'Nie musisz płacić za wynajem studia, kamery i honoraria aktorów. Wszystko jest generowane przez AI.',
-            'sol2-title': 'Szybkość uruchomienia x3',
-            'sol2-desc': 'Otrzymujesz gotowy kinematograficzny film reklamowy w zaledwie 3-5 dni.',
-            'sol3-title': 'Koniec z ograniczeniami',
-            'sol3-desc': 'Nagranie produktu na Marsie lub pod wodą kosztuje miliony. Dla AI nie ma przeszkód.',
-            'sol4-title': 'Efekt Wow dla widza',
-            'sol4-desc': 'Przebijamy ślepotę banerową złożonymi światami wizualnymi. Publiczność ogląda do końca.',
-            'packages-title': 'Zamów produkcję',
-            'pkg1-name': 'AI-KONCEPT',
-            'pkg1-desc': 'Idealny na próbę bez ryzyka.',
-            'pkg1-f1': 'Opracowanie pomysłu i scenariusza',
-            'pkg1-f2': 'Storyboard (3-4 sceny)',
-            'pkg1-f3': '1 gotowa animacja AI (3-5 sek)',
-            'pkg1-f4': 'Kwota zaliczana na pełny film',
-            'btn-pay': 'Zapłać $49',
-            'badge-popular': 'Hit sprzedaży',
-            'pkg2-name': 'COMMERCIAL SHORT',
-            'pkg2-desc': 'Idealny do reklamy targetowanej i Reels.',
-            'pkg2-f1': 'Pełnometrażowy film reklamowy (10-15 sek)',
-            'pkg2-f2': 'Generacja otoczenia i fizyki',
-            'pkg2-f3': 'Sound design (muzyka + efekty)',
-            'pkg2-f4': '2 formaty (Reels 9:16 + Web 16:9)',
-            'btn-pay2': 'Zapłać $350',
-            'pkg3-name': 'BRAND CAMPAIGN',
-            'pkg3-desc': 'Kompleksowe rozwiązanie kampanii reklamowej.',
-            'pkg3-f1': 'Film (do 30 sek) ze złożoną grafiką',
-            'pkg3-f2': 'Generacja ambasadorów AI',
-            'pkg3-f3': '15 statycznych obrazów Hi-Res',
-            'pkg3-f4': 'Pełne prawa komercyjne',
-            'btn-discuss': 'Omów projekt',
-            'reviews-title': 'Opinie',
-            'review1': '"Niesamowita jakość pracy. Filmy przekroczyły oczekiwania, montaż jest dynamiczny i wygląda jak produkcja za 5000 $."',
-            'review1-author': 'Aleksander W.',
-            'review1-role': 'CEO TechFlow',
-            'review2': '"Zaoszczędziliśmy ogromny budżet na sesjach zdjęciowych. Modele AI wyglądają niesamowicie realistycznie. Konwersja w reklamie wzrosła 3 razy."',
-            'review2-author': 'Elena R.',
-            'review2-role': 'Dyrektor ds. marketingu',
-            'review3': '"Evgenia stworzyła niesamowite kreacje dla naszej marki jubilerskiej. Odblaski na diamentach wyglądają perfekcyjnie."',
-            'review3-author': 'Julia M.',
-            'review3-role': 'Właścicielka marki',
-            'footer-copy': '© 2026 Wszelkie prawa zastrzeżone.'
+            'nav-portfolio': 'Portfolio', 'nav-solutions': 'Dlaczego AI?', 'nav-packages': 'Cennik',
+            'hero-title': 'Kinematograficzna produkcja AI<br>dla Twojej marki.', 'hero-tagline': 'Tworzymy filmy reklamowe za pomocą sieci neuronowych...',
+            'showcase-title': 'Prace premium', 'price-destroyer': 'Pogromca cen',
+            'case-brand': 'Marka "SVZH"', 'case-desc': 'Zadanie: Stworzyć premiumowy wygląd kolekcji...',
+            'case-studio': 'Zdjęcie studyjne', 'case-ai': 'Generacja AI', 'case-result': 'Wynik: Zaoszczędzono klientowi ponad 1500 $...',
+            'solutions-title': 'Dlaczego marki wybierają AI?', 'sol1-title': 'Redukcja kosztów o 80%',
+            'packages-title': 'Zamów produkcję', 'pkg1-name': 'AI-KONCEPT', 'btn-pay': 'Zapłać $49',
+            'badge-popular': 'Hit sprzedaży', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': 'Zapłać $350',
+            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Omów projekt',
+            'reviews-title': 'Opinie', 'footer-copy': '© 2026 Wszelkie prawa zastrzeżone.'
         },
         hu: {
-            'nav-portfolio': 'Portfólió',
-            'nav-solutions': 'Miért AI?',
-            'nav-packages': 'Árak',
-            'hero-title': 'Filmszerű AI-produkció<br>a márkád számára.',
-            'hero-tagline': 'Reklámvideókat készítünk neurális hálózatokkal. 5-ször olcsóbb és 3-szor gyorsabb, mint a hagyományos forgatás. Stúdiók és színészek nélkül.',
-            'showcase-title': 'Prémium munkák',
-            'price-destroyer': 'Árromboló',
-            'case-brand': '"SVZH" márka',
-            'case-desc': 'Feladat: Prémium vizuális megjelenés a kollekcióhoz forgatási költségvetés nélkül.<br>Megoldás: Teljes AI videó-kreatív generálás.',
-            'case-studio': 'Stúdiófelvétel',
-            'case-ai': 'AI-generálás',
-            'case-result': 'Eredmény: Több mint 1500 $-t spóroltak a produkcióban. A filmszerű minőségnek köszönhetően a bevétel egy hét alatt megsokszorozódott.',
-            'solutions-title': 'Miért választják a márkák az AI-t?',
-            'sol1-title': 'Költségcsökkentés 80%-kal',
-            'sol1-desc': 'Nem kell stúdióbérletet, kamerákat vagy színészek díjait fizetni. Mindent az AI generál.',
-            'sol2-title': 'Indulási sebesség x3',
-            'sol2-desc': 'Kész filmszerű reklámvideót kapsz mindössze 3-5 nap alatt.',
-            'sol3-title': 'Nincsenek többé korlátok',
-            'sol3-desc': 'Egy terméket a Marson vagy víz alatt forgatni milliókat költ. Az AI számára nincs akadály.',
-            'sol4-title': 'Wow-hatás a nézőnek',
-            'sol4-desc': 'Áttörjük a bannervakságot összetett vizuális világokkal. A közönség végignézi.',
-            'packages-title': 'Produkció rendelés',
-            'pkg1-name': 'AI-KONCEPCIÓ',
-            'pkg1-desc': 'Ideális kockázatmentes tesztelésre.',
-            'pkg1-f1': 'Ötlet- és forgatókönyv-fejlesztés',
-            'pkg1-f2': 'Storyboard (3-4 jelenet)',
-            'pkg1-f3': '1 kész AI-animáció (3-5 mp)',
-            'pkg1-f4': 'Az összeg beszámít a teljes videóba',
-            'btn-pay': '$49 fizetés',
-            'badge-popular': 'Sláger',
-            'pkg2-name': 'COMMERCIAL SHORT',
-            'pkg2-desc': 'Ideális célzott hirdetésekhez és Reels-ekhez.',
-            'pkg2-f1': 'Teljes reklámvideó (10-15 mp)',
-            'pkg2-f2': 'Környezet és fizika generálás',
-            'pkg2-f3': 'Hangdesign (zene + effektek)',
-            'pkg2-f4': '2 formátum (Reels 9:16 + Web 16:9)',
-            'btn-pay2': '$350 fizetés',
-            'pkg3-name': 'BRAND CAMPAIGN',
-            'pkg3-desc': 'Átfogó reklámkampány-csomag.',
-            'pkg3-f1': 'Videó (30 mp-ig) összetett grafikával',
-            'pkg3-f2': 'AI-nagykövetek generálása',
-            'pkg3-f3': '15 statikus Hi-Res kép',
-            'pkg3-f4': 'Teljes kereskedelmi jogok',
-            'btn-discuss': 'Projekt megbeszélése',
-            'reviews-title': 'Vélemények',
-            'review1': '"Lenyűgöző munkaminőség. A videók minden várakozást felülmúltak, a vágás dinamikus és úgy néz ki, mint egy 5000 dolláros produkció."',
-            'review1-author': 'Alexander V.',
-            'review1-role': 'CEO TechFlow',
-            'review2': '"Hatalmas költségvetést takarítottunk meg a fotózásokon. Az AI-modellek hihetetlenül reálisak. A hirdetési konverzió megháromszorozódott."',
-            'review2-author': 'Elena R.',
-            'review2-role': 'Marketing igazgató',
-            'review3': '"Evgenia hihetetlen kreatívokat készített ékszermárkánk számára. A gyémántokon a fényvisszaverődések tökéletesek."',
-            'review3-author': 'Julia M.',
-            'review3-role': 'Márkatulajdonos',
-            'footer-copy': '© 2026 Minden jog fenntartva.'
+            'nav-portfolio': 'Portfólió', 'nav-solutions': 'Miért AI?', 'nav-packages': 'Árak',
+            'hero-title': 'Filmszerű AI-produkció<br>a márkád számára.', 'hero-tagline': 'Reklámvideókat készítünk neurális hálózatokkal...',
+            'showcase-title': 'Prémium munkák', 'price-destroyer': 'Árromboló',
+            'case-brand': '"SVZH" márka', 'case-desc': 'Feladat: Prémium vizuális megjelenés a kollekcióhoz...',
+            'case-studio': 'Stúdiófelvétel', 'case-ai': 'AI-generálás', 'case-result': 'Eredmény: Több mint 1500 $-t spóroltak...',
+            'solutions-title': 'Miért választják a márkák az AI-t?', 'sol1-title': 'Költségcsökkentés 80%-kal',
+            'packages-title': 'Produkció rendelés', 'pkg1-name': 'AI-KONCEPCIÓ', 'btn-pay': '$49 fizetés',
+            'badge-popular': 'Sláger', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': '$350 fizetés',
+            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Projekt megbeszélése',
+            'reviews-title': 'Vélemények', 'footer-copy': '© 2026 Minden jog fenntartva.'
         },
         zh: {
-            'nav-portfolio': '作品集',
-            'nav-solutions': '为什么选择AI？',
-            'nav-packages': '价格',
-            'hero-title': '为您的品牌打造<br>电影级AI制作。',
-            'hero-tagline': '我们利用神经网络制作广告视频。比传统拍摄便宜5倍，速度快3倍。无需工作室和演员。',
-            'showcase-title': '优质作品',
-            'price-destroyer': '价格终结者',
-            'case-brand': '"SVZH"品牌',
-            'case-desc': '任务：在没有拍摄预算的情况下为系列打造高端视觉效果。<br>解决方案：通过AI完全生成视频创意。',
-            'case-studio': '工作室拍摄',
-            'case-ai': 'AI生成',
-            'case-result': '结果：为客户节省了超过1500美元的制作费用。得益于电影级的品质，一周内收入增长了4倍。',
-            'solutions-title': '品牌为什么选择AI？',
-            'sol1-title': '预算减少80%',
-            'sol1-desc': '无需支付工作室租金、摄像设备和演员费用。一切由AI生成。',
-            'sol2-title': '启动速度x3',
-            'sol2-desc': '仅需3-5天即可获得成品电影级广告视频。',
-            'sol3-title': '不再有限制',
-            'sol3-desc': '在火星上或水下拍摄产品需要数百万美元。对于AI来说没有障碍。',
-            'sol4-title': '给观众的震撼效果',
-            'sol4-desc': '我们用复杂的视觉世界打破横幅盲区。观众会一直看到最后。',
-            'packages-title': '订购制作',
-            'pkg1-name': 'AI概念',
-            'pkg1-desc': '零风险试用的理想选择。',
-            'pkg1-f1': '创意和剧本开发',
-            'pkg1-f2': '分镜头脚本（3-4个场景）',
-            'pkg1-f3': '1个成品AI动画（3-5秒）',
-            'pkg1-f4': '金额可抵扣完整视频费用',
-            'btn-pay': '支付 $49',
-            'badge-popular': '畅销',
-            'pkg2-name': 'COMMERCIAL SHORT',
-            'pkg2-desc': '精准广告和Reels的理想选择。',
-            'pkg2-f1': '完整广告视频（10-15秒）',
-            'pkg2-f2': '环境和物理效果生成',
-            'pkg2-f3': '音效设计（音乐+特效）',
-            'pkg2-f4': '2种格式（Reels 9:16 + Web 16:9）',
-            'btn-pay2': '支付 $350',
-            'pkg3-name': 'BRAND CAMPAIGN',
-            'pkg3-desc': '全面的广告活动解决方案。',
-            'pkg3-f1': '视频（最长30秒）含复杂图形',
-            'pkg3-f2': 'AI代言人生成',
-            'pkg3-f3': '15张静态高分辨率图像',
-            'pkg3-f4': '完整商业使用权',
-            'btn-discuss': '讨论项目',
-            'reviews-title': '客户评价',
-            'review1': '"令人惊叹的工作质量。视频超出了所有期望，剪辑动感十足，看起来像5000美元的制作。"',
-            'review1-author': 'Alexander V.',
-            'review1-role': 'CEO TechFlow',
-            'review2': '"在拍摄上节省了大量预算。AI模型看起来令人难以置信地逼真。广告转化率提高了3倍。"',
-            'review2-author': 'Elena R.',
-            'review2-role': '市场营销总监',
-            'review3': '"Evgenia为我们的珠宝品牌创作了令人难以置信的创意。钻石上的光泽看起来完美无瑕。"',
-            'review3-author': 'Julia M.',
-            'review3-role': '品牌所有者',
-            'footer-copy': '© 2026 版权所有。'
+            'nav-portfolio': '作品集', 'nav-solutions': '为什么选择AI？', 'nav-packages': '价格',
+            'hero-title': '为您的品牌打造<br>电影级AI制作。', 'hero-tagline': '我们利用神经网络制作广告视频...',
+            'showcase-title': '优质作品', 'price-destroyer': '价格终结者',
+            'case-brand': '"SVZH"品牌', 'case-desc': '任务：在没有拍摄预算的情况下为系列打造高端视觉效果...',
+            'case-studio': '工作室拍摄', 'case-ai': 'AI生成', 'case-result': '结果：为客户节省了超过1500美元...',
+            'solutions-title': '品牌为什么选择AI？', 'sol1-title': '预算减少80%',
+            'packages-title': '订购制作', 'pkg1-name': 'AI概念', 'btn-pay': '支付 $49',
+            'badge-popular': '畅销', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': '支付 $350',
+            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': '讨论项目',
+            'reviews-title': '客户评价', 'footer-copy': '© 2026 版权所有。'
         }
     };
 
     var langNames = { ru: 'Русский', fr: 'Français', de: 'Deutsch', pl: 'Polski', hu: 'Magyar', zh: '中文' };
     var currentLang = 'ru';
 
-    // ==================== LANGUAGE SWITCHER ====================
     var langBtn = document.getElementById('langBtn');
     var langDropdown = document.getElementById('langDropdown');
     var langLabel = document.getElementById('langLabel');
 
-    langBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        langDropdown.classList.toggle('active');
-    });
-
-    document.addEventListener('click', function() {
-        langDropdown.classList.remove('active');
-    });
+    langBtn.addEventListener('click', function(e) { e.stopPropagation(); langDropdown.classList.toggle('active'); });
+    document.addEventListener('click', function() { langDropdown.classList.remove('active'); });
 
     document.querySelectorAll('.lang-option').forEach(function(opt) {
         opt.addEventListener('click', function(e) {
@@ -780,33 +516,25 @@
         });
         document.querySelectorAll('[data-i18n]').forEach(function(el) {
             var key = el.getAttribute('data-i18n');
-            if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
-            }
+            if (translations[lang] && translations[lang][key]) el.innerHTML = translations[lang][key];
         });
         document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
             var key = el.getAttribute('data-i18n-html');
-            if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
-            }
+            if (translations[lang] && translations[lang][key]) el.innerHTML = translations[lang][key];
         });
         document.querySelectorAll('[data-i18n-initial]').forEach(function(el) {
             var key = el.getAttribute('data-i18n-initial');
-            if (translations[lang] && translations[lang][key]) {
-                el.textContent = translations[lang][key][0];
-            }
+            if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key][0];
         });
         document.documentElement.lang = (lang === 'zh') ? 'zh' : lang;
     }
 
-    // ==================== SCROLL REVEAL ====================
     var revealElements = document.querySelectorAll('.scroll-reveal');
     var revealObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('revealed'); });
     }, { threshold: 0.1 });
     revealElements.forEach(function(el) { revealObserver.observe(el); });
 
-    // ==================== VIDEO LIGHTBOX ====================
     var lightbox = document.getElementById('lightbox');
     var lightboxContent = document.getElementById('lightboxContent');
     var lightboxClose = document.getElementById('lightboxClose');
@@ -822,16 +550,10 @@
         });
     });
 
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        lightboxContent.innerHTML = '';
-        document.body.style.overflow = '';
-    }
-
+    function closeLightbox() { lightbox.classList.remove('active'); lightboxContent.innerHTML = ''; document.body.style.overflow = ''; }
     lightboxClose.addEventListener('click', function(e) { e.stopPropagation(); closeLightbox(); });
     lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
 
-    // ==================== IMAGE LIGHTBOX ====================
     var imgLightbox = document.getElementById('imgLightbox');
     var imgLightboxImg = document.getElementById('imgLightboxImg');
     var imgLightboxClose = document.getElementById('imgLightboxClose');
@@ -847,21 +569,12 @@
         });
     });
 
-    function closeImgLightbox() {
-        imgLightbox.classList.remove('active');
-        imgLightboxImg.src = '';
-        document.body.style.overflow = '';
-    }
-
+    function closeImgLightbox() { imgLightbox.classList.remove('active'); imgLightboxImg.src = ''; document.body.style.overflow = ''; }
     imgLightboxClose.addEventListener('click', function(e) { e.stopPropagation(); closeImgLightbox(); });
     imgLightbox.addEventListener('click', function(e) { if (e.target === imgLightbox) closeImgLightbox(); });
 
-    // ==================== ESC KEY ====================
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeLightbox();
-            closeImgLightbox();
-        }
+        if (e.key === 'Escape') { closeLightbox(); closeImgLightbox(); }
     });
     </script>
 </body>
