@@ -236,14 +236,12 @@
                         <div class="stat-block">
                             <h3 data-i18n="case-studio">Студийный кадр</h3>
                             <div class="stat-images">
-                                <!-- Новое фото 1 -->
                                 <div class="stat-image clickable-image" data-img-src="https://i.postimg.cc/cL7jCfYS/IMG-2409.jpg" style="background-image: url('https://i.postimg.cc/cL7jCfYS/IMG-2409.jpg');"></div>
                             </div>
                         </div>
                         <div class="stat-block">
                             <h3 data-i18n="case-ai">AI-Генерация</h3>
                             <div class="stat-images">
-                                <!-- Новое фото 2 -->
                                 <div class="stat-image clickable-image" data-img-src="https://i.postimg.cc/kM0qtFVG/IMG-1413.png" style="background-image: url('https://i.postimg.cc/kM0qtFVG/IMG-1413.png');"></div>
                             </div>
                         </div>
@@ -369,124 +367,49 @@
     </footer>
 
     <script>
+    // ПРИНУДИТЕЛЬНЫЙ АВТОЗАПУСК ПРИ ЗАГРУЗКЕ
+    window.addEventListener('load', function() {
+        var allVideos = document.querySelectorAll('video');
+        allVideos.forEach(function(v) {
+            v.play().catch(function(err) {
+                console.log("Браузер заблокировал запуск до взаимодействия", err);
+            });
+        });
+    });
+
     var translations = {
         ru: {
-            'nav-portfolio': 'Портфолио',
-            'nav-solutions': 'Почему ИИ?',
-            'nav-packages': 'Цены',
+            'nav-portfolio': 'Портфолио', 'nav-solutions': 'Почему ИИ?', 'nav-packages': 'Цены',
             'hero-title': 'Кинематографичный AI-продакшн<br>для вашего бренда.',
             'hero-tagline': 'Создаем рекламные ролики с помощью нейросетей. В 5 раз дешевле и в 3 раза быстрее классических съемок. Без студий и актеров.',
-            'showcase-title': 'Премиальные работы',
-            'price-destroyer': 'Разрушитель цен',
-            'case-brand': 'Бренд "SVZH"',
-            'case-desc': 'Задача: Создать премиальный визуальный ряд для коллекции без бюджета на выездную съемку.<br>Решение: Полная генерация видео-креативов через ИИ.',
-            'case-studio': 'Студийный кадр',
-            'case-ai': 'AI-Генерация',
+            'showcase-title': 'Премиальные работы', 'price-destroyer': 'Разрушитель цен',
+            'case-brand': 'Бренд "SVZH"', 'case-desc': 'Задача: Создать премиальный визуальный ряд для коллекции без бюджета на выездную съемку.<br>Решение: Полная генерация видео-креативов через ИИ.',
+            'case-studio': 'Студийный кадр', 'case-ai': 'AI-Генерация',
             'case-result': 'Результат: Сэкономили клиенту более $1500 на продакшене. Благодаря кинематографичному качеству выручка выросла в 4 раза за неделю.',
-            'solutions-title': 'Почему бренды выбирают ИИ?',
-            'sol1-title': 'Сокращение сметы на 80%',
+            'solutions-title': 'Почему бренды выбирают ИИ?', 'sol1-title': 'Сокращение сметы на 80%',
             'sol1-desc': 'Вам не нужно оплачивать аренду студии, камеры и гонорары актеров. Всё генерируется нейросетями.',
-            'sol2-title': 'Скорость запуска x3',
-            'sol2-desc': 'Вы получаете готовый кинематографичный рекламный ролик всего за 3-5 дней.',
-            'sol3-title': 'Ограничений больше нет',
-            'sol3-desc': 'Снять продукт на Марсе или под водой вживую стоит миллионы. Для ИИ нет преград.',
-            'sol4-title': 'Wow-эффект для зрителя',
-            'sol4-desc': 'Пробиваем баннерную слепоту сложными визуальными мирами. Аудитория досматривает до конца.',
-            'packages-title': 'Заказать продакшн',
-            'pkg1-name': 'AI-КОНЦЕПТ',
-            'pkg1-desc': 'Идеально для тест-драйва без рисков.',
-            'pkg1-f1': 'Разработка идеи и сценария',
-            'pkg1-f2': 'Раскадровка (3-4 сцены)',
-            'pkg1-f3': '1 готовая AI-анимация (3-5 сек)',
-            'pkg1-f4': 'Сумма идет в зачет полного ролика',
-            'btn-pay': 'Оплатить $49',
-            'badge-popular': 'Хит продаж',
-            'pkg2-name': 'COMMERCIAL SHORT',
-            'pkg2-desc': 'Идеально для таргетированной рекламы и Reels.',
-            'pkg2-f1': 'Полноценный рекламный ролик (10-15 сек)',
-            'pkg2-f2': 'Генерация окружения и физики',
-            'pkg2-f3': 'Саунд-дизайн (музыка + эффекты)',
-            'pkg2-f4': '2 формата (Reels 9:16 + Web 16:9)',
-            'btn-pay2': 'Оплатить $350',
-            'pkg3-name': 'BRAND CAMPAIGN',
-            'pkg3-desc': 'Комплексная упаковка рекламной кампании.',
-            'pkg3-f1': 'Ролик (до 30 сек) со сложной графикой',
-            'pkg3-f2': 'Генерация AI-амбассадоров',
-            'pkg3-f3': '15 статичных Hi-Res изображений',
-            'pkg3-f4': 'Полные коммерческие права',
-            'btn-discuss': 'Обсудить проект',
-            'reviews-title': 'Отзывы',
+            'sol2-title': 'Скорость запуска x3', 'sol2-desc': 'Вы получаете готовый кинематографичный рекламный ролик всего за 3-5 дней.',
+            'sol3-title': 'Ограничений больше нет', 'sol3-desc': 'Снять продукт на Марсе или под водой вживую стоит миллионы. Для ИИ нет преград.',
+            'sol4-title': 'Wow-эффект для зрителя', 'sol4-desc': 'Пробиваем баннерную слепоту сложными визуальными мирами. Аудитория досматривает до конца.',
+            'packages-title': 'Заказать продакшн', 'pkg1-name': 'AI-КОНЦЕПТ', 'pkg1-desc': 'Идеально для тест-драйва без рисков.',
+            'pkg1-f1': 'Разработка идеи и сценария', 'pkg1-f2': 'Раскадровка (3-4 сцены)', 'pkg1-f3': '1 готовая AI-анимация (3-5 сек)', 'pkg1-f4': 'Сумма идет в зачет полного ролика',
+            'btn-pay': 'Оплатить $49', 'badge-popular': 'Хит продаж', 'pkg2-name': 'COMMERCIAL SHORT', 'pkg2-desc': 'Идеально для таргетированной рекламы и Reels.',
+            'pkg2-f1': 'Полноценный рекламный ролик (10-15 сек)', 'pkg2-f2': 'Генерация окружения и физики', 'pkg2-f3': 'Саунд-дизайн (музыка + эффекты)', 'pkg2-f4': '2 формата (Reels 9:16 + Web 16:9)',
+            'btn-pay2': 'Оплатить $350', 'pkg3-name': 'BRAND CAMPAIGN', 'pkg3-desc': 'Комплексная упаковка рекламной кампании.',
+            'pkg3-f1': 'Ролик (до 30 сек) со сложной графикой', 'pkg3-f2': 'Генерация AI-амбассадоров', 'pkg3-f3': '15 статичных Hi-Res изображений', 'pkg3-f4': 'Полные коммерческие права',
+            'btn-discuss': 'Обсудить проект', 'reviews-title': 'Отзывы',
             'review1': '"Потрясающее качество работы. Видео превзошли все ожидания, монтаж динамичный и выглядит как съемка за $5000."',
-            'review1-author': 'Александр В.',
-            'review1-role': 'CEO TechFlow',
+            'review1-author': 'Александр В.', 'review1-role': 'CEO TechFlow',
             'review2': '"Сэкономили огромный бюджет на фотосессиях. AI-модели выглядят невероятно реалистично. Конверсия в рекламе выросла в 3 раза."',
-            'review2-author': 'Елена Р.',
-            'review2-role': 'Директор по маркетингу',
+            'review2-author': 'Елена Р.', 'review2-role': 'Директор по маркетингу',
             'review3': '"Евгения создала невероятные креативы для нашего ювелирного бренда. Блики на бриллиантах выглядят безупречно."',
-            'review3-author': 'Юлия М.',
-            'review3-role': 'Владелица бренда',
-            'footer-copy': '© 2026 Все права защищены.'
+            'review3-author': 'Юлия М.', 'review3-role': 'Владелица бренда', 'footer-copy': '© 2026 Все права защищены.'
         },
-        fr: {
-            'nav-portfolio': 'Portfolio', 'nav-solutions': "Pourquoi l'IA ?", 'nav-packages': 'Tarifs',
-            'hero-title': 'Production AI cinématographique<br>pour votre marque.', 'hero-tagline': "Nous créons des vidéos publicitaires grâce aux réseaux neuronaux. 5 fois moins cher et 3 fois plus rapide...",
-            'showcase-title': 'Travaux premium', 'price-destroyer': 'Destructeur de prix',
-            'case-brand': 'Marque "SVZH"', 'case-desc': "Objectif : Créer un visuel premium pour la collection...",
-            'case-studio': 'Photo studio', 'case-ai': 'Génération IA', 'case-result': "Résultat : Plus de 1500 $ économisés sur la production...",
-            'solutions-title': "Pourquoi les marques choisissent l'IA ?", 'sol1-title': 'Réduction du budget de 80 %',
-            'packages-title': 'Commander une production', 'pkg1-name': 'AI-CONCEPT', 'btn-pay': 'Payer $49',
-            'badge-popular': 'Best-seller', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': 'Payer $350',
-            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Discuter du projet',
-            'reviews-title': 'Avis clients', 'footer-copy': '© 2026 Tous droits réservés.'
-        },
-        de: {
-            'nav-portfolio': 'Portfolio', 'nav-solutions': 'Warum KI?', 'nav-packages': 'Preise',
-            'hero-title': 'Kinematografische KI-Produktion<br>für Ihre Marke.', 'hero-tagline': 'Wir erstellen Werbevideos mit neuronalen Netzen. 5-mal günstiger...',
-            'showcase-title': 'Premium-Arbeiten', 'price-destroyer': 'Preisbrecher',
-            'case-brand': 'Marke "SVZH"', 'case-desc': 'Aufgabe: Einen Premium-Look für die Kollektion...',
-            'case-studio': 'Studioaufnahme', 'case-ai': 'KI-Generierung', 'case-result': 'Ergebnis: Über 1500 $ bei der Produktion gespart...',
-            'solutions-title': 'Warum Marken KI wählen?', 'sol1-title': 'Budgetreduktion um 80 %',
-            'packages-title': 'Produktion bestellen', 'pkg1-name': 'AI-KONZEPT', 'btn-pay': '$49 bezahlen',
-            'badge-popular': 'Bestseller', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': '$350 bezahlen',
-            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Projekt besprechen',
-            'reviews-title': 'Bewertungen', 'footer-copy': '© 2026 Alle Rechte vorbehalten.'
-        },
-        pl: {
-            'nav-portfolio': 'Portfolio', 'nav-solutions': 'Dlaczego AI?', 'nav-packages': 'Cennik',
-            'hero-title': 'Kinematograficzna produkcja AI<br>dla Twojej marki.', 'hero-tagline': 'Tworzymy filmy reklamowe za pomocą sieci neuronowych...',
-            'showcase-title': 'Prace premium', 'price-destroyer': 'Pogromca cen',
-            'case-brand': 'Marka "SVZH"', 'case-desc': 'Zadanie: Stworzyć premiumowy wygląd kolekcji...',
-            'case-studio': 'Zdjęcie studyjne', 'case-ai': 'Generacja AI', 'case-result': 'Wynik: Zaoszczędzono klientowi ponad 1500 $...',
-            'solutions-title': 'Dlaczego marki wybierają AI?', 'sol1-title': 'Redukcja kosztów o 80%',
-            'packages-title': 'Zamów produkcję', 'pkg1-name': 'AI-KONCEPT', 'btn-pay': 'Zapłać $49',
-            'badge-popular': 'Hit sprzedaży', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': 'Zapłać $350',
-            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Omów projekt',
-            'reviews-title': 'Opinie', 'footer-copy': '© 2026 Wszelkie prawa zastrzeżone.'
-        },
-        hu: {
-            'nav-portfolio': 'Portfólió', 'nav-solutions': 'Miért AI?', 'nav-packages': 'Árak',
-            'hero-title': 'Filmszerű AI-produkció<br>a márkád számára.', 'hero-tagline': 'Reklámvideókat készítünk neurális hálózatokkal...',
-            'showcase-title': 'Prémium munkák', 'price-destroyer': 'Árromboló',
-            'case-brand': '"SVZH" márka', 'case-desc': 'Feladat: Prémium vizuális megjelenés a kollekcióhoz...',
-            'case-studio': 'Stúdiófelvétel', 'case-ai': 'AI-generálás', 'case-result': 'Eredmény: Több mint 1500 $-t spóroltak...',
-            'solutions-title': 'Miért választják a márkák az AI-t?', 'sol1-title': 'Költségcsökkentés 80%-kal',
-            'packages-title': 'Produkció rendelés', 'pkg1-name': 'AI-KONCEPCIÓ', 'btn-pay': '$49 fizetés',
-            'badge-popular': 'Sláger', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': '$350 fizetés',
-            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': 'Projekt megbeszélése',
-            'reviews-title': 'Vélemények', 'footer-copy': '© 2026 Minden jog fenntartva.'
-        },
-        zh: {
-            'nav-portfolio': '作品集', 'nav-solutions': '为什么选择AI？', 'nav-packages': '价格',
-            'hero-title': '为您的品牌打造<br>电影级AI制作。', 'hero-tagline': '我们利用神经网络制作广告视频...',
-            'showcase-title': '优质作品', 'price-destroyer': '价格终结者',
-            'case-brand': '"SVZH"品牌', 'case-desc': '任务：在没有拍摄预算的情况下为系列打造高端视觉效果...',
-            'case-studio': '工作室拍摄', 'case-ai': 'AI生成', 'case-result': '结果：为客户节省了超过1500美元...',
-            'solutions-title': '品牌为什么选择AI？', 'sol1-title': '预算减少80%',
-            'packages-title': '订购制作', 'pkg1-name': 'AI概念', 'btn-pay': '支付 $49',
-            'badge-popular': '畅销', 'pkg2-name': 'COMMERCIAL SHORT', 'btn-pay2': '支付 $350',
-            'pkg3-name': 'BRAND CAMPAIGN', 'btn-discuss': '讨论项目',
-            'reviews-title': '客户评价', 'footer-copy': '© 2026 版权所有。'
-        }
+        fr: { 'nav-portfolio': 'Portfolio', 'nav-solutions': "Pourquoi l'IA ?", 'nav-packages': 'Tarifs', 'hero-title': 'Production AI cinématographique<br>pour votre marque.', 'reviews-title': 'Avis clients', 'footer-copy': '© 2026 Tous droits réservés.' },
+        de: { 'nav-portfolio': 'Portfolio', 'nav-solutions': 'Warum KI?', 'nav-packages': 'Preise', 'hero-title': 'Kinematografische KI-Produktion<br>für Ihre Marke.', 'reviews-title': 'Bewertungen', 'footer-copy': '© 2026 Alle Rechte vorbehalten.' },
+        pl: { 'nav-portfolio': 'Portfolio', 'nav-solutions': 'Dlaczego AI?', 'nav-packages': 'Cennik', 'hero-title': 'Kinematograficzna produkcja AI<br>dla Twojej marki.', 'reviews-title': 'Opinie', 'footer-copy': '© 2026 Wszelkie prawa zastrzeżone.' },
+        hu: { 'nav-portfolio': 'Portfólió', 'nav-solutions': 'Miért AI?', 'nav-packages': 'Árak', 'hero-title': 'Filmszerű AI-produkció<br>a márkád számára.', 'reviews-title': 'Vélemények', 'footer-copy': '© 2026 Minden jog fenntartva.' },
+        zh: { 'nav-portfolio': '作品集', 'nav-solutions': '为什么选择AI？', 'nav-packages': '价格', 'hero-title': '为您的品牌打造<br>电影级AI制作。', 'reviews-title': '客户评价', 'footer-copy': '© 2026 版权所有。' }
     };
 
     var langNames = { ru: 'Русский', fr: 'Français', de: 'Deutsch', pl: 'Polski', hu: 'Magyar', zh: '中文' };
